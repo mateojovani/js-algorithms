@@ -20,10 +20,15 @@ function Stack () {
     }
 
     this.pop = () => {
-        let currentTop = this.top
-        this.top = currentTop.next
-        this.length--
-        return currentTop ? currentTop.data : null
+        if (this.length) {
+            this.length--
+            let currentTop = this.top
+            this.top = currentTop.next
+
+            return currentTop.data
+        }
+
+        return null
     }
 
     this.peek = () => this.top ? this.top.data: null
