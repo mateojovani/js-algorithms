@@ -11,7 +11,7 @@ function Queue () {
     this.length = 0
 
     this.push = (data) => {
-        if (!this.top) {
+        if (!this.top || !this.bottom) {
             this.bottom = this.top = new Node(data)
         } else {
             let currentTop = this.top
@@ -40,14 +40,16 @@ function Queue () {
     this.peek = () => this.bottom ? this.bottom.data: null
 }
 
-let queue = new Queue()
-queue.push(3)
-queue.push(33)
-queue.push(2)
-console.log(queue.peek())
-queue.remove()
-queue.remove()
-console.log(queue.peek())
-queue.remove()
-queue.remove()
-console.log(queue.peek())
+// let queue = new Queue()
+// queue.push(3)
+// queue.push(33)
+// queue.push(2)
+// console.log(queue.peek())
+// queue.remove()
+// queue.remove()
+// console.log(queue.peek())
+// queue.remove()
+// queue.remove()
+// console.log(queue.peek())
+
+module.exports = Queue
