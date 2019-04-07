@@ -1,9 +1,9 @@
+const Queue = require('./Queue')
+
 function Node(data) {
     this.data = data
     this.children = []
 }
-
-let Queue = require('./Queue')
 
 function Graph() {
     this.nodes = []
@@ -56,23 +56,25 @@ function Graph() {
     }
 }
 
-let graph = new Graph()
-graph.nodes = (new Array(6)).fill(0).map((el, i) => new Node(i))
-graph.nodes[0].children = [
-    graph.nodes[1],
-    graph.nodes[4],
-    graph.nodes[5]
-]
-graph.nodes[1].children = [
-    graph.nodes[3],
-    graph.nodes[4]
-]
-graph.nodes[2].children = [
-    graph.nodes[1]
-]
-graph.nodes[3].children = [
-    graph.nodes[2],
-    graph.nodes[4]
-]
+// let graph = new Graph()
+// graph.nodes = (new Array(6)).fill(0).map((el, i) => new Node(i))
+// graph.nodes[0].children = [
+//     graph.nodes[1],
+//     graph.nodes[4],
+//     graph.nodes[5]
+// ]
+// graph.nodes[1].children = [
+//     graph.nodes[3],
+//     graph.nodes[4]
+// ]
+// graph.nodes[2].children = [
+//     graph.nodes[1]
+// ]
+// graph.nodes[3].children = [
+//     graph.nodes[2],
+//     graph.nodes[4]
+// ]
 
-console.log(graph.toString())
+// console.log(graph.toString())
+
+module.exports = { Graph, Node }
