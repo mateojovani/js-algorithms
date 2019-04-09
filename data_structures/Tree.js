@@ -47,12 +47,4 @@ function BST() {
     }
 }
 
-let bst = new BST()
-bst.add(7)
-bst.add(8)
-bst.add(2)
-bst.add(1)
-bst.add(0)
-bst.add(9)
-
-console.log(bst.toString())
+module.exports = BST
