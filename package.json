@@ -1,0 +1,23 @@
+{
+  "name": "js-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/problems"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateojovani/js-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateojovani/js-algorithms/issues"
+  },
+  "homepage": "https://github.com/mateojovani/js-algorithms#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}

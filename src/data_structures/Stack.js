@@ -61,16 +61,18 @@ function SetOfStacks (stackThreshold = 3) {
     this.peek = () => this.stacks.length ? this.stacks[this.stacks.length - 1].peek(): null
 }
 
-let st = new SetOfStacks(3)
+// let st = new SetOfStacks(3)
 
-st.push(34)
-st.push(1)
-st.push(4)
-st.push(5)
-console.log(st.peek())
-st.pop()
-st.pop()
-console.log(st.peek())
-st.pop()
-st.pop()
-console.log(st.peek())
+// st.push(34)
+// st.push(1)
+// st.push(4)
+// st.push(5)
+// console.log(st.peek())
+// st.pop()
+// st.pop()
+// console.log(st.peek())
+// st.pop()
+// st.pop()
+// console.log(st.peek())
+
+module.exports = Stack
