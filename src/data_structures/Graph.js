@@ -84,4 +84,4 @@ function Graph() {
 
 // console.log(graph.toString("breadth"))
 
-module.exports = { Graph, Node }
+module.exports = Graph
