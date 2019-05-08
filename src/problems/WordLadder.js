@@ -1,4 +1,5 @@
 const Graph            = require("../data_structures/Graph")
+const Queue            = require("../data_structures/Queue")
 const { shortestPath } = require("../algorithms/Dijkstra")
 const fs               = require('fs')
 const path             = require("path")
@@ -110,7 +111,36 @@ const buildGraph = (buckets, startWord, endWord) => {
  * Solution
  */
 
-const solve = (startWord, endWord) => {
+const breadthFirstSearch = (graph, start, end) => {
+    let pathTo = {
+        [start.node.data]: start.node.data
+    }
+
+    let queue = new Queue()
+    queue.push(start.node)
+
+    while(queue.peek()) {
+        let current = queue.remove()
+
+        current.visited = true
+        if(current.data === end.data) {
+            break
+        }
+
+        current.children.forEach(child => {
+            if (!child.node.visited) {
+                pathTo[child.node.data] = pathTo[current.data] + " -> " + child.node.data
+                child.node.visited = true
+                queue.push(child.node)
+            }
+        })
+    }
+
+
+    return pathTo[end.node.data]
+}
+
+const solve = (startWord, endWord, algorithm) => {
     const words = fs
         .readFileSync(path.resolve(__dirname, "./resources/words.txt"))
         .toString()
@@ -122,14 +152,22 @@ const solve = (startWord, endWord) => {
             endWord
         )
 
-        return shortestPath(graph, start, end)
+        return algorithm(graph, start, end)
 }
 
 
 /**
  * Assert
  */
+describe('outputs word ladder', () => {
+    it('with Dijkstra', () => {
+        expect(solve("FOOL", "SAGE", shortestPath))
+            .to.equal("Shortest path: FOOL -> POOL -> POLL -> PALL -> PALE -> PAGE -> SAGE at cost 6")
+    })
 
-it('outputs word ladder', () => {
-    expect(solve("FOOL", "SAGE")).to.equal("Shortest path: FOOL -> POOL -> POLL -> PALL -> PALE -> PAGE -> SAGE at cost 6")
+    it('with Breadth First Search', () => {
+        expect(solve("FOOL", "SAGE", breadthFirstSearch))
+            .to.equal("FOOL -> POOL -> POLL -> PALL -> PALE -> PAGE -> SAGE")
+    })
 })
+
