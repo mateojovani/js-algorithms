@@ -146,13 +146,13 @@ const solve = (startWord, endWord, algorithm) => {
         .toString()
         .split("\n")
 
-        let { graph, start, end } = buildGraph(
-            generateBuckets(words),
-            startWord,
-            endWord
-        )
+    let { graph, start, end } = buildGraph(
+        generateBuckets(words),
+        startWord,
+        endWord
+    )
 
-        return algorithm(graph, start, end)
+    return algorithm(graph, start, end)
 }
 
 
