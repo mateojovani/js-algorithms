@@ -1,6 +1,6 @@
-const Graph            = require("../data_structures/Graph")
-const Queue            = require("../data_structures/Queue")
-const { shortestPath } = require("../algorithms/Dijkstra")
+const Graph            = require("../../data_structures/Graph")
+const Queue            = require("../../data_structures/Queue")
+const { shortestPath } = require("../../algorithms/Dijkstra")
 const fs               = require('fs')
 const path             = require("path")
 

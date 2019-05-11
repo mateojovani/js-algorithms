@@ -1,4 +1,4 @@
-const Stack = require("../data_structures/Stack")
+const Stack = require("../../data_structures/Stack")
 /**
  * Determine if a given sequence of parenthesis is a balanced sequence
  * "[()]{}{[()()]()}" print true

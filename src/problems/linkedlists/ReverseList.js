@@ -1,4 +1,4 @@
-const List = require("../data_structures/LinkedList")
+const List = require("../../data_structures/LinkedList")
 
 const getListTail = (list) => {
     let cur = list.head
