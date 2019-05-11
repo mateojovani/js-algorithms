@@ -9,9 +9,9 @@ const fib = (n) => {
 }
 
 const fibSeqRec = (n) => {
-    let seq = ""
+    let seq = ''
     for (let i = 0; i <= n; i++) {
-        seq += fib(i) + " "
+        seq += fib(i) + ' '
     }
 
     return seq
@@ -20,15 +20,14 @@ const fibSeqRec = (n) => {
 //iterative
 const fibSeqIter = (n) => {
     let fib = [0, 1],
-        seq = "0 1"
+        seq = '0 1'
 
     for (let i = 2; i <= n; i++) {
         fib[i] = fib[i - 1] + fib[i - 2]
-        seq += " " + fib[i]
+        seq += ' ' + fib[i]
     }
 
     return seq
 }
 
-console.log(fibSeqRec(9))
-console.log(fibSeqIter(9))
+module.exports = { fibSeqRec, fibSeqIter }

@@ -27,16 +27,16 @@ function BST() {
     const addTo = (node, data, to) => {
         if (node)
             if (data <= node.data)
-                addTo(node.left, data, ["left", node])
+                addTo(node.left, data, ['left', node])
             else
-                addTo(node.right, data, ["right", node])
+                addTo(node.right, data, ['right', node])
         else {
             to[1][to[0]] = new Node(data)
         }
     }
 
     this.toString = () => {
-        return inOrderTraversal(this.root).join(" ")
+        return inOrderTraversal(this.root).join(' ')
     }
 
     this.add = (data) => {

@@ -1,5 +1,5 @@
 //find a Vertical Sum of a Binary Tree
-const Tree = require("../../data_structures/Tree")
+const Tree = require('../../data_structures/Tree')
 
 //root has a Horizontal Distance HD: 0
 //right nodes +1

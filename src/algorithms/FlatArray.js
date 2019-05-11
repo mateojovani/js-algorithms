@@ -1,5 +1,3 @@
-let array = [[1,[1,4],3],2,[[[5]]],0]
-
 const buildFlatArr = (arr) => {
     let flatArr = []
 
@@ -12,4 +10,4 @@ const buildFlatArr = (arr) => {
     return flatArr
 }
 
-console.log(buildFlatArr(array))
+module.exports = buildFlatArr

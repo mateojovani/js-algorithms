@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,8 @@
     "url": "https://github.com/mateojovani/js-algorithms/issues"
   },
   "homepage": "https://github.com/mateojovani/js-algorithms#readme",
-  "dependencies": {
+  "devDependencies": {
+    "eslint": "^5.16.0",
     "jest": "^24.8.0"
   }
 }

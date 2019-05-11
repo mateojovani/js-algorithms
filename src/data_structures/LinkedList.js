@@ -1,10 +1,10 @@
-function Node (data) {
+function Node(data) {
     this.data = data
     this.prev = null
     this.next = null
 }
 
-function List () {
+function List() {
     this.head = null
     this.length = 0
 
@@ -61,13 +61,13 @@ function List () {
     }
 
     this.remove = (index = 0) => {
-        let i = 0;
+        let i = 0
         if (index >= this.length)
             index = this.length - 1
 
         let current = this.head
 
-        if(index === 0) { // head
+        if (index === 0) { // head
             this.head = current.next
             this.head.prev = null
         } else if (index === this.length - 1) {

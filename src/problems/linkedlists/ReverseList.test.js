@@ -1,4 +1,4 @@
-const { List, buildReversed } = require("./ReverseList")
+const { List, buildReversed } = require('./ReverseList')
 
 describe('reverse a list', () => {
     it('basic', () => {

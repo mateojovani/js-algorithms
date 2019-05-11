@@ -1,8 +1,8 @@
-const Graph            = require("../../data_structures/Graph")
-const Queue            = require("../../data_structures/Queue")
-const { shortestPath } = require("../../algorithms/Dijkstra")
+const Graph            = require('../../data_structures/Graph')
+const Queue            = require('../../data_structures/Queue')
+const { shortestPath } = require('../../algorithms/Dijkstra')
 const fs               = require('fs')
-const path             = require("path")
+const path             = require('path')
 
 /**
  * Transform the word “FOOL” into the word “SAGE”.
@@ -26,13 +26,13 @@ const path             = require("path")
  * each bucket has words that change by one hop from the each-other
  */
 const getBucketsFromWord = word => {
-    word = word.split("")
+    word = word.split('')
 
     return word.map((_, i) => {
         return word.reduce((w, c, index) => {
-            if (index === i) return w + "_"
+            if (index === i) return w + '_'
             return w + c
-        }, "")
+        }, '')
     })
 }
 
@@ -117,17 +117,17 @@ const breadthFirstSearch = (graph, start, end) => {
     let queue = new Queue()
     queue.push(start.node)
 
-    while(queue.peek()) {
+    while (queue.peek()) {
         let current = queue.remove()
 
         current.visited = true
-        if(current.data === end.data) {
+        if (current.data === end.data) {
             break
         }
 
         current.children.forEach(child => {
             if (!child.node.visited) {
-                pathTo[child.node.data] = pathTo[current.data] + " -> " + child.node.data
+                pathTo[child.node.data] = pathTo[current.data] + ' -> ' + child.node.data
                 child.node.visited = true
                 queue.push(child.node)
             }
@@ -140,9 +140,9 @@ const breadthFirstSearch = (graph, start, end) => {
 
 const solve = (startWord, endWord, algorithm) => {
     const words = fs
-        .readFileSync(path.resolve(__dirname, "./resources/words.txt"))
-        .toString()
-        .split("\n")
+    .readFileSync(path.resolve(__dirname, './resources/words.txt'))
+    .toString()
+    .split('\n')
 
     let { graph, start, end } = buildGraph(
         generateBuckets(words),

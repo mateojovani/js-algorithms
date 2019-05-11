@@ -1,4 +1,4 @@
-const { Tree, traverse, verticalSum } = require("./VerticalSum")
+const { Tree, traverse, verticalSum } = require('./VerticalSum')
 
 it('vertical sum', () => {
     let bst = new Tree()

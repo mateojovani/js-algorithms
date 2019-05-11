@@ -19,7 +19,7 @@ const init = (graph, start) => {
 }
 
 const printPath = (path, start, end) => {
-    let pathStr = "No path found"
+    let pathStr = 'No path found'
     for (let i = path.length - 1; i >= 0; i--) {
         if (path[i].dest.data === end.node.data) { //found end
             let dest = end.node.data
@@ -33,7 +33,7 @@ const printPath = (path, start, end) => {
                 pathStr = ` -> ${dest}` + pathStr
             }
 
-            pathStr = "Shortest path: " + start.node.data + pathStr
+            pathStr = 'Shortest path: ' + start.node.data + pathStr
         }
     }
 

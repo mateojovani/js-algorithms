@@ -1,24 +1,24 @@
-const Stack = require("../../data_structures/Stack")
+const { Stack } = require('../../data_structures/Stack')
 /**
  * Determine if a given sequence of parenthesis is a balanced sequence
  * "[()]{}{[()()]()}" print true
  * "[(])" print false
  */
 
-const isOpenning = p => ["{", "[", "("].includes(p)
+const isOpenning = p => ['{', '[', '('].includes(p)
 
-const isClosing = p => ["}", "]", ")"].includes(p)
+const isClosing = p => ['}', ']', ')'].includes(p)
 
 const isMatching = (op, end) => {
     switch (end) {
-        case "}":
-            if (op === "{") return true
+        case '}':
+            if (op === '{') return true
             return false
-        case "]":
-            if (op === "[") return true
+        case ']':
+            if (op === '[') return true
             return false
-        case ")":
-            if (op === "(") return true
+        case ')':
+            if (op === '(') return true
             return false
         default:
             return false

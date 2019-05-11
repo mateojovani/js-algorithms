@@ -124,19 +124,4 @@ function MinHeap(valueFunc) {
     this.isEmpty = () => this.nodes.length === 0
 }
 
-// let minHeap = new MinHeap(node => node.value)
-// let node0 = minHeap.add({name: "node 0", value: 7})
-// let node1 = minHeap.add({name: "node 1", value: 31})
-// let node2 = minHeap.add({name: "node 2", value: 2})
-// let node3 = minHeap.add({name: "node 3", value: 4})
-// let node4 = minHeap.add({name: "node 4", value: 3})
-// let node5 = minHeap.add({name: "node 5", value: 10})
-// let node6 = minHeap.add({name: "node 6", value: 0})
-// minHeap.popMin()
-// minHeap.popMin()
-// minHeap.popMin()
-// minHeap.remove(node5)
-// minHeap.remove(node6)
-// minHeap.update(node1, node => node.value = 0)
-
 module.exports = MinHeap
