@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/problems"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/mateojovani/js-algorithms#readme",
   "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "jest": "^24.8.0"
   }
 }

@@ -4,8 +4,6 @@ const { shortestPath } = require("../algorithms/Dijkstra")
 const fs               = require('fs')
 const path             = require("path")
 
-const expect = require("chai").expect
-
 /**
  * Transform the word “FOOL” into the word “SAGE”.
  * In a word ladder puzzle you must make the change occur gradually by changing one letter at a time.
@@ -155,19 +153,4 @@ const solve = (startWord, endWord, algorithm) => {
     return algorithm(graph, start, end)
 }
 
-
-/**
- * Assert
- */
-describe('outputs word ladder', () => {
-    it('with Dijkstra', () => {
-        expect(solve("FOOL", "SAGE", shortestPath))
-            .to.equal("Shortest path: FOOL -> POOL -> POLL -> PALL -> PALE -> PAGE -> SAGE at cost 6")
-    })
-
-    it('with Breadth First Search', () => {
-        expect(solve("FOOL", "SAGE", breadthFirstSearch))
-            .to.equal("FOOL -> POOL -> POLL -> PALL -> PALE -> PAGE -> SAGE")
-    })
-})
-
+module.exports = { solve, shortestPath, breadthFirstSearch }

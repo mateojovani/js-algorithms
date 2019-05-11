@@ -1,4 +1,3 @@
-const expect = require("chai").expect
 const Stack = require("../data_structures/Stack")
 /**
  * Determine if a given sequence of parenthesis is a balanced sequence
@@ -52,20 +51,4 @@ const isBalancedPar = exp => {
     return false
 }
 
-/**
- * Assert
- */
-describe('is balanced parenthesis', () => {
-    it("complex", () => {
-        expect(isBalancedPar("[()]{}{[()()]()}")).to.equal(true)
-        expect(isBalancedPar("{(([{}]))}")).to.equal(true)
-    })
-
-    it("simple", () => {
-        expect(isBalancedPar("[(])")).to.equal(false)
-    })
-
-    it("edge case", () => {
-        expect(isBalancedPar("[")).to.equal(false)
-    })
-})
+module.exports = isBalancedPar

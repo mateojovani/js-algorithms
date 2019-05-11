@@ -1,5 +1,3 @@
-const expect = require("chai").expect
-
 /**-------------------------------------------------------------------
  * Problem: Merge Intervals
  * -------------------------------------------------------------------
@@ -48,29 +46,4 @@ const mergeIntervals = (...intervals) => {
     return mergedIntervals
 }
 
-/**------------------------------------------------------------------
- * Assert
- * ------------------------------------------------------------------
- */
-
-describe("merge intervals", () => {
-    it("example", () => {
-        expect(mergeIntervals([1, 3], [2, 6], [8, 10], [15, 18])).to.deep.equal([[1, 6], [8, 10], [15, 18]])
-    })
-
-    it("edge case 1", () => {
-        expect(mergeIntervals([1, 3])).to.deep.equal([[1, 3]])
-    })
-
-    it("edge case 2", () => {
-        expect(mergeIntervals([1, 7], [4, 5])).to.deep.equal([[1, 7]])
-    })
-
-    it("edge case 3", () => {
-        expect(mergeIntervals([1, 7], [7, 9])).to.deep.equal([[1, 9]])
-    })
-
-    it("compplex", () => {
-        expect(mergeIntervals([1, 4], [2, 3], [5, 9], [7, 10], [23, 35], [29, 40])).to.deep.equal([[1, 4], [5, 10], [23, 40]])
-    })
-})
+module.exports = mergeIntervals
